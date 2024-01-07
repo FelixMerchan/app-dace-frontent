@@ -1,0 +1,218 @@
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Datos de la interacción</h3>
+      </div>
+      <div class="card-body">
+
+        <!-- FECHA REGISTROS -->
+        <div class="form-group row mb-2">
+          <label for="fechaNacimiento" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Fecha: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="date" name="fechaNacimiento" id="fechaNacimiento" class="form-control">
+          </div>
+        </div>
+
+        <!-- NOMBRES DE GRABACIÓN -->
+        <div class="form-group row mb-2">
+          <label for="nombre" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Nombre de Grabación: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="nombre" id="nombre" class="form-control" maxlength="100"
+              placeholder="Nombres de Grabación">
+          </div>
+        </div>
+
+        <!-- CLIENTE -->
+        <div class="form-group row mb-2">
+          <label for="cboClientes" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Cliente: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <select name="cboClientes" id="cboClientes" class="form-control cboClientes">
+              <option value="">Seleccione</option>
+              <option value="0704204999">Manuel Enrique Salamea Yagual</option>
+              <option value="1315778694">Yandry Enrique Villigua Villigua</option>
+              <option value="0706553666">Andres Alejandro Granillo Santillan</option>
+              <option value="0705966927">Francisca Leonor Serrano Guaman</option>
+              <option value="0706023140">Mayerli Shayri Ato Guerrero</option>
+              <option value="0751065343">Marilyn Crisbeth Farfan Añazco</option>
+              <option value="1104212079">Milto Rodrigo Sanchez Cardenas</option>
+              <option value="0920740511">Edgar Aquiles Tumbaco Baque</option>
+              <option value="0704432236">Denis Fernando Roque Romero</option>
+              <option value="0927876433">Johanna Maricela Vera Muñoz</option>
+              <option value="0942102054">Arnaldo Cristhoper Mujica Lucin</option>
+              <option value="0702150293">Jhonny Fernando Santillan Ponce</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- AGENCIA -->
+        <div class="form-group row mb-2">
+          <label for="cboAgencias" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Agencia: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <select name="cboAgencias" id="cboAgencias" class="form-control cboAgencias">
+              <option value="">Seleccione</option>
+              <option value="1">MATRIZ</option>
+              <option value="2">AGENCIA EL GUABO</option>
+              <option value="3">AGENCIA PUERTO BOLÍVAR</option>
+              <option value="4">AGENCIA NARANJAL</option>
+              <option value="5">AGENCIA PIÑAS</option>
+              <option value="6">AGENCIA PONCE ENRÍQUEZ</option>
+              <option value="7">AGENCIA BALSAS</option>
+              <option value="8">AGENCIA LAS LAJAS</option>
+              <option value="9">AGENCIA BALAO</option>
+              <option value="10">AGENCIA STA. ROSA</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- CANAL -->
+        <div class="form-group row mb-2">
+          <label for="cboCanal" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Canal: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <select name="cboCanal" id="cboCanal" class="form-control cboCanal">
+              <option value="">Seleccione</option>
+              <option value="1">WhatsApp</option>
+              <option value="2">Facebook</option>
+              <option value="3">Instagram</option>
+              <option value="4">Correo Electrónico</option>
+              <option value="5">Llamada Atendida</option>
+              <option value="6">Llamada Realizada</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- CANTIDAD DE MENSAJES -->
+        <div class="form-group row mb-2">
+          <label for="cantidadMensajes" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Cantidad de Mensajes:
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="number" name="cantidadMensajes" id="cantidadMensajes" class="form-control" min="0" value="0"
+              placeholder="0">
+          </div>
+        </div>
+
+        <!-- OBSERVACION -->
+        <div class="form-group row mb-2">
+          <label for="observacion" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Observación:
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="observacion" id="observacion" class="form-control" maxlength="50"
+              placeholder="Observación">
+          </div>
+        </div>
+
+        <!-- DURACION -->
+        <div class="form-group row mb-2">
+          <label for="duracion" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Duración:
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="time" name="duracion" id="duracion" class="form-control" value="00:00:00"
+              placeholder="Duración">
+          </div>
+        </div>
+
+        <!-- TEMA -->
+        <div class="form-group row mb-2">
+          <label for="cboTemas" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Tema: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <select name="cboTemas" id="cboTemas" class="form-control cboTemas">
+              <option value="">Seleccione</option>
+              <option value="1">Ninguno</option>
+              <option value="2">Consulta</option>
+              <option value="3">Información</option>
+              <option value="4">Queja</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row mb-2">
+          <label for="cboTemas" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Motivos: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <div class="card">
+              <div class="card-body p-0">
+                <table class="table table-sm">
+                  <thead class="bg-lightblue ">
+                    <tr>
+                      <th>Motivo</th>
+                      <th style="width: 40px">Quitar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Número de Teléfono del Oficial de Crédito Danilo Centeno.</td>
+                      <td>
+                        <button type="button" class="btn btn-danger btn-sm">
+                          <i class="fa fa-times-circle" aria-hidden="true"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Valor a cancelar para liquidar el Crédito.</td>
+                      <td>
+                        <button type="button" class="btn btn-danger btn-sm">
+                          <i class="fa fa-times-circle" aria-hidden="true"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Número de Cuentas de entidades financieras de la Cooperativa.</td>
+                      <td>
+                        <button type="button" class="btn btn-danger btn-sm">
+                          <i class="fa fa-times-circle" aria-hidden="true"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer">
+                <div class="float-right">
+                  <button class="btn btn-warning btn-sm mx-2">
+                    <i class="fa fa-plus" aria-hidden="true"></i> Agregar
+                  </button>
+                  <button class="btn btn-info btn-sm">
+                    <i class="fa fa-plus" aria-hidden="true"></i> Nuevo
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-info">
+          <i class="fas fa-save"></i>&nbsp; Guardar
+        </button>
+        &nbsp;
+        <a routerLink="/clientes" class="btn btn-danger">
+          <i class="fas fa-ban"></i>&nbsp;
+          Cancelar
+        </a>
+      </div>
+    </div>
+
+
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->

@@ -1,0 +1,89 @@
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Datos de la agencia</h3>
+      </div>
+      <div class="card-body">
+
+        <!-- NOMBRE -->
+        <div class="form-group row mb-2">
+          <label for="nombre" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Nombre: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="nombre" id="nombre" class="form-control" maxlength="300"
+              placeholder="Nombre">
+          </div>
+        </div>
+
+        <!-- TELEFONO -->
+        <div class="form-group row mb-2">
+          <label for="telefono" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Teléfono: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="telefono" id="telefono" class="form-control" maxlength="50" placeholder="Teléfono">
+          </div>
+        </div>
+
+        <!-- DIRECCIÓN -->
+        <div class="form-group row mb-2">
+          <label for="direccion" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Dirección: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="direccion" id="direccion" class="form-control" maxlength="50" placeholder="Dirección">
+          </div>
+        </div>
+
+        <!-- CIUDAD -->
+        <div class="form-group row mb-2">
+          <label for="ciudad" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Ciudad: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <select name="ciudad" id="ciudad" class="form-control">
+              <option value="">Seleccione</option>
+              <option value="MACHALA">MACHALA</option>
+              <option value="EL GUABO">EL GUABO</option>
+              <option value="LAS LAJAS">LAS LAJAS</option>
+              <option value="BALSAS">BALSAS</option>
+              <option value="PIÑAS">PIÑAS</option>
+              <option value="NARANJAL">NARANJAL</option>
+              <option value="CATAMAYO">CATAMAYO</option>
+              <option value="PONCE ENRÍQUEZ">PONCE ENRÍQUEZ</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- STATUS -->
+        <div class="form-group row mb-2">
+          <label for="status" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Activo:
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <div class="form-check pt-lg-2">
+              <input type="checkbox" name="status" id="status" class="form-check-input">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-info">
+          <i class="fas fa-save"></i>&nbsp; Guardar
+        </button>
+        &nbsp;
+        <a routerLink="/agencias" class="btn btn-danger">
+          <i class="fas fa-ban"></i>&nbsp;
+          Cancelar
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->

@@ -1,0 +1,87 @@
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Datos de la ciudad</h3>
+      </div>
+      <div class="card-body">
+
+        <!-- PROVINCIA -->
+        <div class="form-group row mb-2">
+          <label for="provincia" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Provincia: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <select name="provincia" id="provincia" class="form-control">
+              <option value="">Seleccione</option>
+              <option value="1">AZUAY</option>
+              <option value="2">BOLIVAR</option>
+              <option value="3">CAÑAR</option>
+              <option value="4">CARCHI</option>
+              <option value="5">COTOPAXI</option>
+              <option value="6">CHIMBORAZO</option>
+              <option value="7">EL ORO</option>
+              <option value="8"> ESMERALDAS</option>
+              <option value="9">GUAYAS</option>
+              <option value="10">IMBABURA</option>
+              <option value="11">LOJA</option>
+              <option value="12">LOS RIOS</option>
+              <option value="13">MANABI</option>
+              <option value="14">MORONA SANTIAGO</option>
+              <option value="15">NAPO</option>
+              <option value="16">PASTAZA</option>
+              <option value="17">PICHINCHA</option>
+              <option value="18">TUNGURAHUA</option>
+              <option value="19">ZAMORA CHINCHIPE</option>
+              <option value="20">GALAPAGOS</option>
+              <option value="21">SUCUMBIOS</option>
+              <option value="22">ORELLANA</option>
+              <option value="23">SANTO DOMINGO DE LOS TSACHILAS</option>
+              <option value="24">SANTA ELENA</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- NOMBRES -->
+        <div class="form-group row mb-2">
+          <label for="ciudad" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Ciudad: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="ciudad" id="ciudad" class="form-control" maxlength="300"
+              placeholder="Nombres">
+          </div>
+        </div>
+
+        <!-- STATUS -->
+        <div class="form-group row mb-2">
+          <label for="status" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Activo:
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <div class="form-check pt-lg-2">
+              <input type="checkbox" name="status" id="status" class="form-check-input">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-info">
+          <i class="fas fa-save"></i>&nbsp; Guardar
+        </button>
+        &nbsp;
+        <a routerLink="/ciudades" class="btn btn-danger">
+          <i class="fas fa-ban"></i>&nbsp;
+          Cancelar
+        </a>
+      </div>
+    </div>
+
+
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->

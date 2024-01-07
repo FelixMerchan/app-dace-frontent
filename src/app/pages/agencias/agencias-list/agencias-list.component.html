@@ -1,0 +1,127 @@
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Listado de agencias</h3>
+            <div class="float-right">
+              <a routerLink="./nuevo" class="btn btn-info btn-sm">
+                <i class="fa fa-plus" aria-hidden="true"></i> Nuevo
+              </a>
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table class="table table-bordered table-striped" id="tblAgencias">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Teléfono</th>
+                  <th>Ciudad</th>
+                  <th class="text-center" style="width: 80px;">Estado</th>
+                  <th class="text-center" style="width: 110px;">Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>MATRIZ</td>
+                  <td>072-593-132</td>
+                  <td>MACHALA</td>
+                  <td class="text-center">
+                    <span class="badge rounded-pill badge-success w-100 py-2 font-weight-normal">Activo</span>
+                  </td>
+                  <td class="text-center" >
+                    <div class="btn-group">
+                      <button class="btn btn-info btn-sm" type="button" data-toggle="modal" data-target="#mdlAgencia">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                      </button>
+                      <a routerLink="./editar/1" class="btn btn-warning btn-sm">
+                        <i class="fa fa-edit" aria-hidden="true"></i>
+                      </a>
+                      <a routerLink="./eliminar/1" class="btn btn-danger btn-sm">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>AGENCIA PUERTO BOLÍVAR</td>
+                  <td>072-593-132</td>
+                  <td>MACHALA</td>
+                  <td class="text-center">
+                    <span class="badge rounded-pill badge-danger w-100 py-2 font-weight-normal">Inactivo</span>
+                  </td>
+                  <td class="text-center">
+                    <div class="btn-group">
+                      <button class="btn btn-info btn-sm" type="button" data-toggle="modal" data-target="#mdlAgencia">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                      </button>
+                      <a routerLink="./editar/1" class="btn btn-warning btn-sm">
+                        <i class="fa fa-edit" aria-hidden="true"></i>
+                      </a>
+                      <a routerLink="./eliminar/1" class="btn btn-danger btn-sm">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>AGENCIA EL GUABO</td>
+                  <td>072-593-132</td>
+                  <td>EL GUABO</td>
+                  <td class="text-center">
+                    <span class="badge rounded-pill badge-success w-100 py-2 font-weight-normal">Activo</span>
+                  </td>
+                  <td class="text-center" >
+                    <div class="btn-group">
+                      <button class="btn btn-info btn-sm" type="button" data-toggle="modal" data-target="#mdlAgencia">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                      </button>
+                      <a routerLink="./editar/1" class="btn btn-warning btn-sm">
+                        <i class="fa fa-edit" aria-hidden="true"></i>
+                      </a>
+                      <a routerLink="./eliminar/1" class="btn btn-danger btn-sm">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>AGENCIA PIÑAS</td>
+                  <td>072-593-132</td>
+                  <td>PIÑAS</td>
+                  <td class="text-center">
+                    <span class="badge rounded-pill badge-success w-100 py-2 font-weight-normal">Activo</span>
+                  </td>
+                  <td class="text-center" >
+                    <div class="btn-group">
+                      <button class="btn btn-info btn-sm" type="button" data-toggle="modal" data-target="#mdlAgencia">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                      </button>
+                      <a routerLink="./editar/1" class="btn btn-warning btn-sm">
+                        <i class="fa fa-edit" aria-hidden="true"></i>
+                      </a>
+                      <a routerLink="./eliminar/1" class="btn btn-danger btn-sm">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="mdlAgencia" class="modal fade">
+  <app-agencias-details></app-agencias-details>
+</div>

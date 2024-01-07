@@ -1,0 +1,69 @@
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Datos del tema</h3>
+      </div>
+      <div class="card-body">
+
+        <!-- NOMBRE -->
+        <div class="form-group row mb-2">
+          <label for="nombre" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Nombre: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="nombre" id="nombre" class="form-control" maxlength="300"
+              placeholder="Nombre">
+          </div>
+        </div>
+
+        <!-- DESCRIPCIÓN -->
+        <div class="form-group row mb-2">
+          <label for="descripcion" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Descripción:
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <textarea class="form-control" id="descripcion" placeholder="Dirección" name="descripcion"></textarea>
+          </div>
+        </div>
+
+        <!-- EXTENSIÓN -->
+        <div class="form-group row mb-2">
+          <label for="extension" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Extensión: <strong class="text-red">*</strong>
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <input type="text" name="extension" id="extension" class="form-control" placeholder="Extensión">
+          </div>
+        </div>
+
+        <!-- STATUS -->
+        <div class="form-group row mb-2">
+          <label for="status" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+            Activo:
+          </label>
+          <div class="col-xs-8 col-lg-8">
+            <div class="form-check pt-lg-2">
+              <input type="checkbox" name="status" id="status" class="form-check-input">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-info">
+          <i class="fas fa-save"></i>&nbsp; Guardar
+        </button>
+        &nbsp;
+        <a routerLink="/canales" class="btn btn-danger">
+          <i class="fas fa-ban"></i>&nbsp;
+          Cancelar
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
