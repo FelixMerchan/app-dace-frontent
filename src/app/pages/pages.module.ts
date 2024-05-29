@@ -36,6 +36,7 @@ import { UsuariosDetailsComponent } from './usuarios/usuarios-details/usuarios-d
 import { PerfilComponent } from './perfil/perfil.component';
 import { InteraccionesFormComponent } from './interacciones/interacciones-form/interacciones-form.component';
 import { InteraccionesListComponent } from './interacciones/interacciones-list/interacciones-list.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -96,7 +97,8 @@ import { InteraccionesListComponent } from './interacciones/interacciones-list/i
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ]
 })
 export class PagesModule { }

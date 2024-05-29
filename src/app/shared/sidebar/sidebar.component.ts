@@ -1,5 +1,8 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { SidebarService } from '../../services/sidebar.service';
+import { AuthService } from '../../auth/services/auth.service';
+import { IUsuario } from '../../interfaces/usuario.interface';
+import { Router } from '@angular/router';
 
 declare var $: any;
 
@@ -10,12 +13,16 @@ declare var $: any;
 })
 export class SidebarComponent implements OnInit, AfterViewInit {
 
+  public user: IUsuario | null = null;
   menuItems: any[];
 
   constructor(
-    private siderbarServices: SidebarService
+    private siderbarServices: SidebarService,
+    private authService: AuthService,
+    private router: Router,
   ) {
     this.menuItems = this.siderbarServices.menu;
+    this.user = this.authService.loggedInUser;
   }
 
   ngAfterViewInit(): void {
@@ -23,9 +30,12 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.initTreeView();
-    });
+    if( typeof window !== 'undefined' ) {
+      setTimeout(() => {
+        this.initTreeView();
+      });
+    }
+
   }
 
   private initTreeView(): void {
@@ -35,7 +45,10 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   }
 
   logout(): void {
-    location.href = 'login';
+    this.authService.logout();
+    this.router.navigate(['/login']);
+    // location.href = 'login';
+
   }
 
 }

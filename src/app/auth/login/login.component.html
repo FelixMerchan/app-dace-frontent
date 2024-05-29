@@ -1,7 +1,7 @@
 <div class="hold-transition login-page">
   <div class="login-box animate__animated animate__backInLeft">
     <div class="login-logo">
-      <a href="../../index2.html"><b>CallCenter</b></a>
+      <a href="#"><b>CallCenter</b></a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
@@ -10,7 +10,7 @@
 
         <form class="mb-3">
           <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Correo">
+            <input type="text" id="username" name="username" class="form-control" placeholder="Usuario" [(ngModel)]="loginForm.username" >
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -18,7 +18,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Contraseña">
+            <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" [(ngModel)]="loginForm.password" >
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -28,7 +28,7 @@
           <div class="row">
             <div class="col-8">
               <div class="icheck-primary">
-                <input type="checkbox" id="remember">
+                <input type="checkbox" id="remember" name="remember" [(ngModel)]="loginForm.rememberMe" >
                 <label for="remember">
                   Recordarme
                 </label>

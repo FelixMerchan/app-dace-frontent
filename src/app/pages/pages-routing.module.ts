@@ -20,12 +20,14 @@ import { CanalesFormComponent } from './canales/canales-form/canales-form.compon
 import { PerfilComponent } from './perfil/perfil.component';
 import { InteraccionesListComponent } from './interacciones/interacciones-list/interacciones-list.component';
 import { InteraccionesFormComponent } from './interacciones/interacciones-form/interacciones-form.component';
+import { isAuthenticatedGuard } from '../auth/guards/auth.guard';
 
 
 const routes: Routes = [
   {
     path: 'dashboard',
     component: PagesComponent,
+    canActivate: [ isAuthenticatedGuard ],
     children: [
       { path: '', component: DashboardComponent, data: { title: 'Dashboard' } },
     ]
@@ -33,6 +35,7 @@ const routes: Routes = [
   {
     path: 'clientes',
     component: PagesComponent,
+    canActivate: [ isAuthenticatedGuard ],
     children: [
       { path: '', component: ClientesListComponent, data: { title: 'Clientes' } },
       { path: 'nuevo', component: ClientesFormComponent, data: { title: 'Nuevo' } },
@@ -42,6 +45,7 @@ const routes: Routes = [
   {
     path: 'interacciones',
     component: PagesComponent,
+    canActivate: [ isAuthenticatedGuard ],
     children: [
       { path: '', component: InteraccionesListComponent, data: { title: 'Interacciones' } },
       { path: 'nuevo', component: InteraccionesFormComponent, data: { title: 'Nuevo' } },
@@ -51,6 +55,7 @@ const routes: Routes = [
   {
     path: 'agencias',
     component: PagesComponent,
+    canActivate: [ isAuthenticatedGuard ],
     children: [
       { path: '', component: AgenciasListComponent, data: { title: 'Agencias' } },
       { path: 'nuevo', component: AgenciasFormComponent, data: { title: 'Nuevo' } },
@@ -60,6 +65,7 @@ const routes: Routes = [
   {
     path: 'ciudades',
     component: PagesComponent,
+    canActivate: [ isAuthenticatedGuard ],
     children: [
       { path: '', component: CiudadesListComponent, data: { title: 'Ciudades' } },
       { path: 'nuevo', component: CiudadesFormComponent, data: { title: 'Nuevo' } },
@@ -69,6 +75,7 @@ const routes: Routes = [
   {
     path:'motivos',
     component: PagesComponent,
+    canActivate: [ isAuthenticatedGuard ],
     children: [
       { path: '', component: MotivosListComponent, data: { title: 'Motivos' } },
       { path: 'nuevo', component: MotivosFormComponent, data: { title: 'Nuevo' } },
@@ -78,6 +85,7 @@ const routes: Routes = [
   {
     path: 'temas',
     component: PagesComponent,
+    canActivate: [ isAuthenticatedGuard ],
     children: [
       { path: '', component: TemasListComponent, data: { title: 'Temas' } },
       { path: 'nuevo', component: TemasFormComponent, data: { title: 'Nuevo' } },
@@ -87,6 +95,7 @@ const routes: Routes = [
   {
     path: 'canales',
     component: PagesComponent,
+    canActivate: [ isAuthenticatedGuard ],
     children: [
       { path: '', component: CanalesListComponent, data: { title: 'Canales' } },
       { path: 'nuevo', component: CanalesFormComponent, data: { title: 'Nuevo' } },
@@ -96,6 +105,7 @@ const routes: Routes = [
   {
     path: 'usuarios',
     component: PagesComponent,
+    canActivate: [ isAuthenticatedGuard ],
     children: [
       { path: '', component: UsuariosListComponent, data: { title: 'Usuarios' } },
       { path: 'nuevo', component: UsuariosFormComponent, data: { title: 'Nuevo' } },
@@ -105,6 +115,7 @@ const routes: Routes = [
   {
     path: 'perfil',
     component: PagesComponent,
+    canActivate: [ isAuthenticatedGuard ],
     children: [
       { path: '', component: PerfilComponent, data: { title: 'Perfil'}}
     ]
