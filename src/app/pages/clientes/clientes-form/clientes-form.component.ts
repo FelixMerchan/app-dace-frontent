@@ -1,11 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IClientes } from '../interfaces/clientes.interface';
 import { ConsultaService } from '../../../services/consulta.service';
-import Swal from 'sweetalert2';
+import Swal, { SweetAlertIcon, SweetAlertPosition } from 'sweetalert2';
 import { ICiudades } from '../../ciudades/interfaces/ciudades.interface';
 import { CiudadesService } from '../../ciudades/services/ciudades.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ClientesService } from '../services/clientes.service';
+
+declare var $: any;
 
 @Component({
   selector: 'app-clientes-form',
@@ -34,11 +36,22 @@ export class ClientesFormComponent implements OnInit {
     private clientesService: ClientesService,
     private consultaService: ConsultaService,
     private ciudadesService: CiudadesService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
     this.getCiudades();
     this.obtenerClienteId();
+  }
+
+  private initializeSelect2(): void {
+    setTimeout( () => {
+      $('.select2').select2();
+      $('.select2').on('change', (event:any) => {
+        const value = $(event.target).val();
+        this.clienteForm.id_ciudad = value;
+      });
+    }, 0)
   }
 
   private formatFechaNacimiento(fecha: string): string {
@@ -96,6 +109,7 @@ export class ClientesFormComponent implements OnInit {
     this.ciudadesService.getAllCiudades()
      .subscribe( (data:any) => {
       this.ciudades = data;
+      this.initializeSelect2();
      });
   }
 
@@ -103,7 +117,7 @@ export class ClientesFormComponent implements OnInit {
 
     this.clientesService.getClientesById(this.clienteForm.id_cliente!).subscribe(
       (res:any) => {
-
+        console.log( res );
         this.clienteForm.cedula_cli = res.cedula_cli;
         this.clienteForm.nombre_cli = res.nombre_cli;
         this.clienteForm.apellido_cli = res.apellido_cli;
@@ -137,13 +151,62 @@ export class ClientesFormComponent implements OnInit {
 
   }
 
+  showAlertMessage(title:string, text:string, icon:SweetAlertIcon, position:SweetAlertPosition): void {
+    Swal.fire({
+      position: position,
+      icon: icon,
+      title: title,
+      text: text,
+      showConfirmButton: false,
+      timer: 3000,
+      // timerProgressBar: true,
+    });
+  }
 
   guardar(): void {
-    console.log( this.clienteForm );
+
+    // VALIDACION DE LAS ENTRADAS
+    if ( !this.clienteForm.cedula_cli ) {
+      this.showAlertMessage('Información', 'La identificacion del cliente es obligatorio', 'question', 'top-end');
+      return;
+    }
+
+    // completar la validación de la información del cliente
+
+    this.clientesService.create( this.clienteForm ).subscribe(
+      ( res:any ) => {
+        console.log( res );
+
+        this.showAlertMessage('Guardado!', 'Cliente registrado correctamente', 'success', 'top-end');
+        this.router.navigateByUrl('/clientes');
+      },
+      ( err:any ) => {
+        console.log( err );
+        this.showAlertMessage('Error', 'Ocurrió un error al registrar el nuevo cliente', 'error', 'center');
+      }
+    );
   }
 
   editar(): void {
-    console.log( this.clienteForm );
+    // VALIDACION DE LAS ENTRADAS
+    if ( !this.clienteForm.cedula_cli ) {
+      this.showAlertMessage('Información', 'La identificacion del cliente es obligatorio', 'question', 'top-end');
+      return;
+    }
+
+    // completar la validación de la información del cliente
+
+    this.clientesService.update( this.clienteForm ).subscribe(
+      (res:any) => {
+        console.log( res );
+        this.showAlertMessage('Guardado!', 'Cliente actualizado correctamente','success', 'top-end');
+        this.router.navigateByUrl('/clientes');
+      },
+      (err:any) => {
+        console.log( err );
+        this.showAlertMessage('Error', 'Ocurrió un error al guardar los cambios de cliente', 'error', 'center');
+      }
+    );
   }
 
 }

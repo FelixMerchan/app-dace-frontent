@@ -43,6 +43,9 @@ export class ClientesService {
 
   delete(id:number):Observable<any> {
     const url: string =  `${this.apiUrl}/clientes/${id}`;
+
+    console.log( url );
+
     return this.httpClient.delete<any>(url, { headers: this.getHeaders() });
   }
 

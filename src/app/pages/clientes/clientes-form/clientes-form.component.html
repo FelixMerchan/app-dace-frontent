@@ -64,8 +64,8 @@
             Ciudad: <strong class="text-red">*</strong>
           </label>
           <div class="col-xs-8 col-lg-8">
-            <select name="ciudad" id="ciudad" class="form-control" [(ngModel)]="clienteForm.id_ciudad">
-              <option value="">Seleccione</option>
+            <select name="ciudad" id="ciudad" class="form-control select2" [(ngModel)]="clienteForm.id_ciudad">
+              <option [value]="null" selected="selected">Seleccione</option>
               <option [value]="ciudad.id_ciudad" *ngFor="let ciudad of ciudades" >{{ ciudad.nombre_ciu }} / {{ ciudad.provincia }}</option>
             </select>
           </div>
@@ -73,21 +73,21 @@
 
         <!-- TELEFONO -->
         <div class="form-group row mb-2">
-          <label for="" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+          <label for="telefono" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
             Teléfono
           </label>
           <div class="col-xs-8 col-lg-8">
-            <input type="text" class="form-control" maxlength="50" placeholder="Teléfono" [(ngModel)]="clienteForm.telefono_cli" >
+            <input type="text" class="form-control" id="telefono" maxlength="50" placeholder="Teléfono" [(ngModel)]="clienteForm.telefono_cli" >
           </div>
         </div>
 
         <!-- NICK REDES -->
         <div class="form-group row mb-2">
-          <label for="" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
+          <label for="nick" class="col-xs-4 col-lg-4 col-form-label font-weight-normal">
             Nick Redes:
           </label>
           <div class="col-xs-8 col-lg-8">
-            <input type="text" class="form-control" maxlength="50" placeholder="Nick Redes" [(ngModel)]="clienteForm.nick_redes" >
+            <input type="text" class="form-control" id="nick" maxlength="50" placeholder="Nick Redes" [(ngModel)]="clienteForm.nick_redes" >
           </div>
         </div>
 
